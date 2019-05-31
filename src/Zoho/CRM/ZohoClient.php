@@ -594,7 +594,9 @@ class ZohoClient
                 // It's a list of entities
                 if (is_array($propValue)) {
                     $tag = null;
-                    list($key, $list) = each($propValue);
+                    $key = key($propValue);
+                    $list = current($propValue);
+
                     if (!is_numeric($key)) {
                         $tag = $key;
                         $propValue = $list;
